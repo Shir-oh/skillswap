@@ -1,9 +1,5 @@
-import ListingsCard from "@/[locale]/page";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <div>
-      <ListingsCard />
-    </div>
-  )
+  redirect("/en");
 }

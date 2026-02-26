@@ -1,4 +1,4 @@
-export default function ListingsCard() {
+export default function Page() {
     const listings = [
         { id: "1", title: "Review your React component", category: "Dev", duration: 20 },
         { id: "2", title: "CSS debugging help", category: "Dev", duration: 15 },
