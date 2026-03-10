@@ -1,10 +1,13 @@
-"use client";
-
-import { skills } from "@/lib/skills";
+import type { Skill } from "@/lib/skills";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Listings({ locale }: { locale: string }) {
+type Props = {
+    locale: string
+    skills: Skill[]
+}
+
+export default function Listings({ locale, skills }: Props) {
     return (
         <div className="space-y-4">
             <h1 className="text-2xl font-bold">Skill Listings</h1>

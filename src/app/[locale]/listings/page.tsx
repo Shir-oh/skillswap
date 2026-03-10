@@ -1,4 +1,5 @@
 import Listings from "@/components/listings/Listings";
+import { skills } from "@/lib/skills";
 
 type Props = {
     params: Promise<{ locale: string }>
@@ -10,7 +11,7 @@ export default async function ListingsPage({ params }: Props) {
     return (
         <div className="space-y-4">
             <div className="text-sm">Listings Page Maker</div>
-            <Listings locale={locale} />
+            <Listings locale={locale} skills={skills} />
         </div>
 
     )
