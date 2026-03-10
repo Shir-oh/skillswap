@@ -14,9 +14,11 @@ export default async function Layout({ children, params }: Props) {
     }
 
     return (
-        <div className="p-8 space-y-4">
-            <Header locale={locale} />
-            {children}
+        <div className="min-h-screen">
+            < Header locale={locale} />
+            <main className="p-8">
+                {children}
+            </main>
         </div >
     )
 }
