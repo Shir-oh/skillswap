@@ -1,4 +1,4 @@
-import FavoritesList from "@/components/favorites/FavoritesList"
+import FavoritesList from "@/components/favorites/FavoritesList";
 
 type Props = {
     params: Promise<{ locale: string }>

@@ -16,7 +16,7 @@ export default function Listings({ locale, skills }: Props) {
                 <Link
                     key={skill.id}
                     href={`/${locale}/listings/${skill.id}`}
-                    className="flex gap-4 border p-4 rounded-md items-start"
+                    className="flex items-center rounded-2xl bg-white p-6 sm:rounded-4xl sm:p-10 dark:bg-transparent dark:outline dark:outline-white/10 gap-4"
                 >
 
                     <Image src={skill.image}

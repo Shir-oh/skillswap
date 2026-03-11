@@ -5,7 +5,6 @@ type Props = {
     params: Promise<{ locale: string }>
 }
 
-// listings page
 export default async function ListingsPage({ params }: Props) {
     const { locale } = await params;
     return (

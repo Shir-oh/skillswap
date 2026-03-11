@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { HeartIcon } from "@phosphor-icons/react"
+import { useState } from "react";
+import { HeartIcon } from "@phosphor-icons/react";
 
 type Props = {
     skillId: string
