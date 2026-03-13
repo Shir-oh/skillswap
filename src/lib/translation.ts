@@ -1,3 +1,4 @@
+// TODO: futher implement "en" | "no" translation library. (look into next-intl)
 export const translations = {
     en: {
         favorites: "Favorites",

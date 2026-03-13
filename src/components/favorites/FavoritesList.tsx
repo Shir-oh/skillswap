@@ -1,5 +1,6 @@
 "use client";
 
+import ListingRow from "@/components/listings/ListingRow";
 import { listings } from "@/lib/listings";
 import { useState } from "react";
 
@@ -21,5 +22,15 @@ export default function FavoritesList({ locale }: Props) {
         return <p>No favorites yet.</p>;
     }
 
-    return;
+    return (
+        <div className="space-y-4">
+            {favoriteListings.map((listing) => (
+                <ListingRow
+                    key={listing.id}
+                    locale={locale}
+                    listing={listing}
+                />
+            ))}
+        </div>
+    );
 }

@@ -16,24 +16,22 @@ export default async function ListingsDetailPage({ params }: Props) {
 
     return (
         <div className="rounded-2xl p-6 outline outline-white/10 sm:p-10">
-            <div className="space-y-4">
-                <div className="text-xs text-gray-400">ID: {listing.id}</div>
+            <div className="space-y-6">
+                <div className="space-y-2">
+                    <p className="text-sm text-gray-400">{listing.name}</p>
 
-                <h1 className="text-2xl font-bold">{listing.offer}</h1>
+                    <h1 className="text-2xl font-bold">
+                        {listing.offer}
+                        <span className="mx-2 text-gray-500">→</span>
+                        {listing.want}
+                    </h1>
 
-                <p className="text-sm text-gray-400">
-                    {listing.name} wants to learn{" "}
-                    <span className="text-white">{listing.want}</span>.
-                </p>
-
-                <p className="text-gray-400">{listing.description}</p>
-
-                <div className="text-sm">
-                    Level: <span className="font-medium">{listing.level}</span>
+                    <p className="text-gray-400">{listing.description}</p>
                 </div>
 
-                <div className="text-sm">
-                    Rating: <span className="font-medium">⭐ {listing.rating}</span>
+                <div className="flex flex-wrap gap-4 text-sm text-gray-300">
+                    <span>Level: {listing.level}</span>
+                    <span>Rating: ⭐ {listing.rating}</span>
                 </div>
 
                 <Image
@@ -41,7 +39,7 @@ export default async function ListingsDetailPage({ params }: Props) {
                     alt={listing.name}
                     width={500}
                     height={500}
-                    className="rounded-xl"
+                    className="w-full max-w-md rounded-xl object-cover"
                 />
 
                 <FavoriteButton listingId={listing.id} />
