@@ -1,10 +1,11 @@
 export type Skill = {
-    id: string
-    title: string
-    description: string
-    level: "Beginner" | "Intermediate" | "Advanced"
-    image: string
-}
+    id: string;
+    title: string;
+    description: string;
+    level: "Beginner" | "Intermediate" | "Advanced";
+    rating: number;
+    image: string;
+};
 
 export const skills: Skill[] = [
     {
@@ -12,20 +13,23 @@ export const skills: Skill[] = [
         title: "React Basics",
         description: "Learn components, props, and state.",
         level: "Beginner",
-        image: "/images/react-basics.png"
+        rating: 4.8,
+        image: "/images/react-basics.png",
     },
     {
         id: "ts-intermediate",
         title: "Intermediate TypeScript",
         description: "Generics, utility types, deep inference.",
         level: "Intermediate",
-        image: "/images/intermediate-ts.png"
+        rating: 4.6,
+        image: "/images/intermediate-ts.png",
     },
     {
         id: "ts-advanced",
         title: "Advanced TypeScript",
         description: "Generics, utility types, deep inference.",
         level: "Advanced",
-        image: "/images/ts-advanced.png"
-    }
-]
+        rating: 4.9,
+        image: "/images/ts-advanced.png",
+    },
+];

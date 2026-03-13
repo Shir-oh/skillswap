@@ -2,9 +2,18 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { navButtonClass } from "../ui/buttonStyles";
 
 export default function LanguageMenu() {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    const pathname = usePathname();
+
+    function switchLocale(locale: "en" | "no") {
+        const segments = pathname.split("/").filter(Boolean);
+        segments[0] = locale;
+        return `/${segments.join("/")}`;
+    }
 
     return (
         <div className="relative">
@@ -13,7 +22,7 @@ export default function LanguageMenu() {
                 aria-expanded={isOpen}
                 aria-haspopup="menu"
                 onClick={() => setIsOpen((prev) => !prev)}
-                className="rounded-full px-3 py-1 text-sm font-semibold text-white hover:bg-white/10"
+                className={navButtonClass}
             >
                 Language
             </button>
@@ -22,15 +31,25 @@ export default function LanguageMenu() {
                 <div className="absolute right-0 top-full mt-2 w-24 rounded-lg bg-white/10 p-2 text-white shadow">
                     <div className="flex flex-col gap-2">
 
-                        <Link href="/en" className="rounded px-3 py-1 text-sm font-semibold hover:bg-white/10">
+                        <Link
+                            href={switchLocale("en")}
+                            onClick={() => setIsOpen(false)}
+                            className="rounded px-3 py-1 text-sm font-semibold hover:bg-white/10"
+                        >
                             🇺🇸 EN
                         </Link>
-                        <Link href="/no" className="rounded px-3 py-1 text-sm font-semibold hover:bg-white/10">
+
+                        <Link
+                            href={switchLocale("no")}
+                            onClick={() => setIsOpen(false)}
+                            className="rounded px-3 py-1 text-sm font-semibold hover:bg-white/10"
+                        >
                             🇳🇴 NO
                         </Link>
+
                     </div>
                 </div>
             )}
         </div>
-    )
+    );
 }

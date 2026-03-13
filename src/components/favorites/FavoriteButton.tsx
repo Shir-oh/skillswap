@@ -4,14 +4,14 @@ import { useState } from "react";
 import { HeartIcon } from "@phosphor-icons/react";
 
 type Props = {
-    skillId: string
+    listingId: string;
 }
 
-export default function FavoriteButton({ skillId }: Props) {
+export default function FavoriteButton({ listingId }: Props) {
     const [isFavorited, setIsFavorited] = useState(() => {
         const stored = localStorage.getItem("favorites")
         const favorites = stored ? JSON.parse(stored) : []
-        return favorites.includes(skillId)
+        return favorites.includes(listingId)
     })
 
     function toggleFavorite() {
@@ -20,11 +20,11 @@ export default function FavoriteButton({ skillId }: Props) {
 
         let updated
 
-        if (favorites.includes(skillId)) {
-            updated = favorites.filter((id: string) => id !== skillId)
+        if (favorites.includes(listingId)) {
+            updated = favorites.filter((id: string) => id !== listingId)
             setIsFavorited(false)
         } else {
-            updated = [...favorites, skillId]
+            updated = [...favorites, listingId]
             setIsFavorited(true)
         }
 

@@ -1,8 +1,9 @@
 export default function Footer() {
     return (
-        <header className="dark:bg-gray-950 dark:text-white">
-            <div className="mx-auto flex items-center justify-between px-6 py-4">
+        <footer className="border-t border-gray-800 bg-gray-950">
+            <div className="flex items-center justify-center px-4 py-4">
+                <p className="text-sm text-gray-400"> © 2026 SkillSwap by Shir-oh</p>
             </div>
-        </header>
+        </footer>
     )
 }
