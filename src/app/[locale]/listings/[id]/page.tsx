@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import FavoriteButton from "@/components/favorites/FavoriteButton";
+import Icon from "@/components/ui/Icon";
 import { listings } from "@/lib/listings";
 
 type Props = {
-    params: Promise<{ id: string }>;
+    params: Promise<{ locale: string; id: string }>;
 };
 
 export default async function ListingsDetailPage({ params }: Props) {
@@ -15,34 +16,61 @@ export default async function ListingsDetailPage({ params }: Props) {
     if (!listing) notFound();
 
     return (
-        <div className="rounded-2xl p-6 outline outline-white/10 sm:p-10">
-            <div className="space-y-6">
-                <div className="space-y-2">
-                    <p className="text-sm text-gray-400">{listing.name}</p>
+        <div className="mx-auto max-w-5xl">
+            <div className="grid gap-8 lg:grid-cols-2">
+                <div className="space-y-6">
+                    <div className="space-y-2">
+                        <p className="text-sm text-gray-400">{listing.name}</p>
 
-                    <h1 className="text-2xl font-bold">
-                        {listing.offer}
-                        <span className="mx-2 text-gray-500">→</span>
-                        {listing.want}
-                    </h1>
+                        <h1 className="text-3xl font-bold tracking-tight">
+                            {listing.name}
+                        </h1>
 
-                    <p className="text-gray-400">{listing.description}</p>
+                        <p className="max-w-2xl text-gray-400">{listing.description}</p>
+                    </div>
+
+                    <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="rounded-2xl border border-white/10 p-4">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                                Offers
+                            </p>
+                            <p className="mt-2 font-medium">{listing.offer}</p>
+                        </div>
+
+                        <div className="rounded-2xl border border-white/10 p-4">
+                            <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                                Wants
+                            </p>
+                            <p className="mt-2 font-medium">{listing.want}</p>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-4 text-sm text-gray-300">
+                        <span>Level: {listing.level}</span>
+
+                        <span className="inline-flex items-center gap-1">
+                            <Icon
+                                weight="fill"
+                                icon="star"
+                                size={14}
+                                className="text-brand"
+                            />
+                            {listing.rating}
+                        </span>
+                    </div>
+
+                    <FavoriteButton listingId={listing.id} />
                 </div>
 
-                <div className="flex flex-wrap gap-4 text-sm text-gray-300">
-                    <span>Level: {listing.level}</span>
-                    <span>Rating: ⭐ {listing.rating}</span>
+                <div className="rounded-2xl border border-white/10 p-4">
+                    <Image
+                        src={listing.image}
+                        alt={listing.name}
+                        width={600}
+                        height={600}
+                        className="w-full rounded-xl object-cover"
+                    />
                 </div>
-
-                <Image
-                    src={listing.image}
-                    alt={listing.name}
-                    width={500}
-                    height={500}
-                    className="w-full max-w-md rounded-xl object-cover"
-                />
-
-                <FavoriteButton listingId={listing.id} />
             </div>
         </div>
     );

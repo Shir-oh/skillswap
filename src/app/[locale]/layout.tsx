@@ -15,7 +15,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     }
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-gray-950 text-white">
             < Header locale={locale} />
             <main className="p-8">{children}</main>
             <Footer />

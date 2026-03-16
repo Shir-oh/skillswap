@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "A simple skill-exchange marketplace built with Next.js.",
 };
 
+// TODO: Locale has to handle lang="en" or "no"
 export default function RootLayout({
   children,
 }: {

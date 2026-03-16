@@ -1,6 +1,7 @@
 import type { Listing } from "@/lib/listings";
 import Link from "next/link";
 import Image from "next/image";
+import Icon from "../ui/Icon";
 
 type Props = {
     locale: string;
@@ -21,22 +22,46 @@ export default function ListingRow({ locale, listing }: Props) {
                 className="shrink-0 rounded-md object-cover"
             />
 
-            <div className="min-w-0 flex-1 space-y-1">
+            <div className="min-w-0 flex-1 space-y-3">
                 <p className="text-sm text-gray-400">{listing.name}</p>
 
-                <h2 className="font-semibold">
-                    {listing.offer}
-                    <span className="mx-2 text-gray-500">→</span>
-                    {listing.want}
-                </h2>
+                <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-xl bg-white/5 p-3">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                            Offers
+                        </p>
+                        <p className="mt-1 font-medium">{listing.offer}</p>
+                    </div>
+
+                    <div className="rounded-xl bg-white/5 p-3">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                            Wants
+                        </p>
+                        <p className="mt-1 font-medium">{listing.want}</p>
+                    </div>
+                </div>
 
                 <p className="text-sm text-gray-400">{listing.description}</p>
 
                 <div className="flex items-center justify-between text-xs text-gray-500">
                     <span>{listing.level}</span>
-                    <span>⭐ {listing.rating}</span>
+                    <span className="inline-flex items-center gap-1">
+                        <Icon
+                            icon="star"
+                            size={14}
+                            weight="fill"
+                            className="text-brand"
+                        />
+                        {listing.rating}
+                    </span>
                 </div>
             </div>
+
+            <Icon
+                icon="caret-right"
+                size={18}
+                className="shrink-0 text-gray-500"
+            />
         </Link>
     );
 }

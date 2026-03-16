@@ -1,12 +1,15 @@
 "use client";
 
 import { secondaryButtonClass } from "./buttonStyles";
-import { MagnifyingGlassIcon } from "@phosphor-icons/react";
+import Icon from "./Icon";
 
 export default function SearchButton() {
     return (
         <button className={secondaryButtonClass} aria-label="Search">
-            <MagnifyingGlassIcon size={18} />
+            <Icon
+                icon="search"
+                size={18}
+                weight="regular" />
         </button>
     )
 }

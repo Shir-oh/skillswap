@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { HeartIcon } from "@phosphor-icons/react";
+import Icon from "../ui/Icon";
+import { secondaryButtonClass } from "../ui/buttonStyles";
 
 type Props = {
     listingId: string;
@@ -35,10 +36,15 @@ export default function FavoriteButton({ listingId }: Props) {
         <button
             type="button"
             onClick={toggleFavorite}
-            className="flex items-center gap-2 rounded border px-3 py-1"
+            className={secondaryButtonClass}
         >
-            <HeartIcon size={20} weight={isFavorited ? "fill" : "regular"} />
-            {isFavorited ? "Favorited" : "Favorite"}
+            <Icon
+                icon="heart"
+                size={18}
+                weight={isFavorited ? "fill" : "regular"}
+                className={isFavorited ? "text-red-400" : "text-white"}
+            />
+            {isFavorited ? "Saved" : "Save"}
         </button>
     );
 }

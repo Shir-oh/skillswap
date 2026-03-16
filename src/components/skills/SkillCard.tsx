@@ -1,6 +1,9 @@
+"use client";
+
 import type { Skill } from "@/lib/skills";
 import Link from "next/link";
 import Image from "next/image";
+import Icon from "../ui/Icon";
 
 type Props = {
     locale: string;
@@ -10,7 +13,7 @@ type Props = {
 export default function SkillCard({ locale, skill }: Props) {
     return (
         <Link
-            href={`/${locale}/listings/${skill.id}`}
+            href={`/${locale}/listings`}
             className="block rounded-2xl p-4 outline outline-white/10 transition hover:bg-white/10"
         >
             <Image
@@ -28,7 +31,14 @@ export default function SkillCard({ locale, skill }: Props) {
 
                 <div className="flex items-center justify-between text-xs text-gray-500">
                     <span>{skill.level}</span>
-                    <span>⭐ {skill.rating}</span>
+                    <span className="inline-flex items-center gap-1">
+                        <Icon
+                            icon="star"
+                            size={14} weight="fill"
+                            className="text-brand"
+                        />
+                        {skill.rating}
+                    </span>
                 </div>
             </div>
         </Link>
