@@ -1,5 +1,5 @@
 import type { Skill } from "@/lib/skills";
-import SkillCard from "./SkillCard";
+import SkillCard from "./SkillsCard";
 
 type Props = {
     locale: string;

@@ -1,4 +1,4 @@
-import SkillsGrid from "@/components/skills/SkillGrid";
+import SkillsGrid from "@/components/skills/SkillsGrid";
 import { skills } from "@/lib/skills";
 
 type Props = {

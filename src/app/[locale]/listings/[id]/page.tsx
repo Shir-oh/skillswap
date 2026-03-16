@@ -22,6 +22,7 @@ export default async function ListingsDetailPage({ params }: Props) {
                     <div className="space-y-2">
                         <p className="text-sm text-gray-400">{listing.name}</p>
 
+
                         <h1 className="text-3xl font-bold tracking-tight">
                             {listing.name}
                         </h1>

@@ -8,18 +8,20 @@ type Props = {
     listingId: string;
 };
 
+function readFavorites() {
+    const stored = localStorage.getItem("favorites");
+    return stored ? JSON.parse(stored) : [];
+}
+
 export default function FavoriteButton({ listingId }: Props) {
     const [isFavorited, setIsFavorited] = useState(() => {
-        const stored = localStorage.getItem("favorites");
-        const favorites = stored ? JSON.parse(stored) : [];
-        return favorites.includes(listingId);
+        return readFavorites().includes(listingId);
     });
 
     function toggleFavorite() {
-        const stored = localStorage.getItem("favorites");
-        const favorites = stored ? JSON.parse(stored) : [];
+        const favorites = readFavorites();
 
-        let updated;
+        let updated: string[];
 
         if (favorites.includes(listingId)) {
             updated = favorites.filter((id: string) => id !== listingId);
@@ -30,6 +32,7 @@ export default function FavoriteButton({ listingId }: Props) {
         }
 
         localStorage.setItem("favorites", JSON.stringify(updated));
+        window.dispatchEvent(new Event("favorites-changed"));
     }
 
     return (

@@ -10,7 +10,7 @@ type Props = {
     skill: Skill;
 };
 
-export default function SkillCard({ locale, skill }: Props) {
+export default function SkillsCard({ locale, skill }: Props) {
     return (
         <Link
             href={`/${locale}/listings`}
