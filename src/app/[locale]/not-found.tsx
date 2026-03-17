@@ -1,30 +1,34 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { getTranslations, type Locale } from "@/lib";
+import Image from "next/image";
+import Icon from "@/components/ui/Icon";
+import { tertiaryButtonClass } from "@/components/ui/buttonStyles";
 
-type Props = {
-    params: { locale: Locale };
-};
+export default function NotFound() {
+  const pathname = usePathname();
+  const locale: Locale = pathname.startsWith("/no") ? "no" : "en";
+  const t = getTranslations(locale);
 
-export default function NotFound({ params }: Props) {
-    const { locale } = params;
-    const t = getTranslations(locale);
+  return (
+    <div className="mx-auto max-w-2xl space-y-6 text-center">
+      <h1 className="text-3xl font-bold tracking-tight">{t.notFound.title}</h1>
 
-    return (
-        <div className="mx-auto max-w-2xl space-y-6 text-center">
-            <h1 className="text-3xl font-bold tracking-tight">
-                {t.notFound.title}
-            </h1>
+      <p className="text-gray-400">{t.notFound.description}</p>
 
-            <p className="text-gray-400">
-                {t.notFound.description}
-            </p>
+      <Image
+        src="/images/not-found.png"
+        alt={t.notFound.imageAlt}
+        width={800}
+        height={200}
+      />
 
-            <Link
-                href={`/${locale}`}
-                className="inline-flex items-center justify-center rounded-full bg-brand px-4 py-2 text-sm font-semibold text-black hover:opacity-90"
-            >
-                {t.notFound.backHome}
-            </Link>
-        </div>
-    );
+      <Link href={`/${locale}`} className={tertiaryButtonClass}>
+        <Icon icon="arrow-left" size={14} weight="regular" />
+        {t.notFound.backHome}
+      </Link>
+    </div>
+  );
 }

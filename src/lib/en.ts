@@ -41,8 +41,9 @@ const en = {
     },
     notFound: {
         title: "Page not found",
-        description: "The page you’re looking for doesn’t exist or may have been moved.",
+        description: "The page you're looking for doesn't exist.",
         backHome: "Back to home",
+        imageAlt: "404 error illustration"
     }
 };
 

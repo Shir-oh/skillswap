@@ -46,8 +46,9 @@ const no: Messages = {
     },
     notFound: {
         title: "Siden ble ikke funnet",
-        description: "Siden du leter etter finnes ikke eller kan ha blitt flyttet.",
+        description: "Siden du leter etter finnes ikke.",
         backHome: "Tilbake til forsiden",
+        imageAlt: "404-feil illustrasjon"
     }
 };
 
