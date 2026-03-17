@@ -1,14 +1,14 @@
 import SkillsGrid from "@/components/skills/SkillsGrid";
-import { getTranslations, type Locale } from "@/lib/index";
-import { skills } from "@/lib/skills";
+import { getTranslations, type Locale } from "@/lib";
+import { getSkills } from "@/lib/skills";
 
 type Props = {
-    params: Promise<{ locale: string }>;
+    params: Promise<{ locale: Locale }>;
 };
 
 export default async function HomePage({ params }: Props) {
     const { locale } = await params;
-
+    const skills = getSkills(locale);
     const t = getTranslations(locale as Locale);
 
     return (

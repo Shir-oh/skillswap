@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import ListingRow from "@/components/listings/ListingRow";
-import { listings } from "@/lib/listings";
+import { getListings } from "@/lib/listings";
+import { getTranslations, type Locale } from "@/lib";
 
 type Props = {
-    locale: string;
+    locale: Locale;
 };
 
 function readFavoriteIds() {
@@ -15,6 +16,8 @@ function readFavoriteIds() {
 
 export default function FavoritesList({ locale }: Props) {
     const [favoriteIds, setFavoriteIds] = useState<string[]>(readFavoriteIds);
+    const listings = getListings(locale);
+    const t = getTranslations(locale);
 
     useEffect(() => {
         function handleFavoritesChanged() {
@@ -38,7 +41,7 @@ export default function FavoritesList({ locale }: Props) {
         return (
             <div className="rounded-2xl border border-white/10 p-6 text-center">
                 <p className="text-sm text-gray-400">
-                    You haven’t saved any listings yet.
+                    {t.favorites.emptyState}
                 </p>
             </div>
         );

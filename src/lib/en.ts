@@ -10,10 +10,40 @@ const en = {
     home: {
         titleLine1: "Exchange developer skills.",
         titleLine2: "Learn from other developers.",
-        description:
-            "SkillSwap is a small marketplace where developers offer programming skills they know and request skills they want to learn. Browse listings, discover opportunities, and connect with others to exchange knowledge.",
+        description: "SkillSwap is a small marketplace where developers offer programming skills they know and request skills they want to learn. Browse listings, discover opportunities, and connect with others to exchange knowledge.",
         featuredSkills: "Featured skills",
     },
+    listings: {
+        title: "Find your next skill swap",
+        description:
+            "Browse developers offering skills they know and looking to learn something new through peer-to-peer exchanges.",
+        searchPlaceholder: "Search skills or technologies...",
+        emptyState: "No listings match your search.",
+        ctaText: "Want to share a skill and learn something new?",
+        ctaButton: "Create listing",
+        offers: "Offers",
+        wants: "Wants",
+    },
+    listingDetail: {
+        offers: "Offers",
+        wants: "Wants",
+        level: "Level",
+    },
+    favorites: {
+        title: "Favorites",
+        description: "Listings you saved to revisit later.",
+        emptyState: "You haven’t saved any listings yet.",
+        save: "Save",
+        saved: "Saved",
+    },
+    footer: {
+        copyright: "© 2026 Portfolio project | SkillSwap by Shir-oh",
+    },
+    notFound: {
+        title: "Page not found",
+        description: "The page you’re looking for doesn’t exist or may have been moved.",
+        backHome: "Back to home",
+    }
 };
 
 export default en;

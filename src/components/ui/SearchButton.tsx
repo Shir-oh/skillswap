@@ -2,7 +2,7 @@
 
 import { secondaryButtonClass } from "./buttonStyles";
 import Icon from "./Icon";
-import { getTranslations, type Locale } from "@/lib/i18n";
+import { getTranslations, type Locale } from "@/lib";
 
 type Props = {
     locale: Locale;

@@ -4,6 +4,10 @@
   --color-brand: #00bcff;
 }
 
+body {
+  @apply min-h-screen bg-gray-950 text-white antialiased;
+}
+
 @layer utilities {
   .text-brand {
     color: var(--color-brand);

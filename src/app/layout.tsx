@@ -18,16 +18,15 @@ export const metadata: Metadata = {
   description: "A simple skill-exchange marketplace built with Next.js.",
 };
 
-// TODO: Locale has to handle lang="en" or "no"
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} text-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable}`}
       >
         {children}
       </body>

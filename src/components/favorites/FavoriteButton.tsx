@@ -3,9 +3,11 @@
 import { useState } from "react";
 import Icon from "../ui/Icon";
 import { secondaryButtonClass } from "../ui/buttonStyles";
+import { getTranslations, type Locale } from "@/lib";
 
 type Props = {
     listingId: string;
+    locale: Locale;
 };
 
 function readFavorites() {
@@ -13,10 +15,12 @@ function readFavorites() {
     return stored ? JSON.parse(stored) : [];
 }
 
-export default function FavoriteButton({ listingId }: Props) {
+export default function FavoriteButton({ listingId, locale }: Props) {
     const [isFavorited, setIsFavorited] = useState(() => {
         return readFavorites().includes(listingId);
     });
+
+    const t = getTranslations(locale);
 
     function toggleFavorite() {
         const favorites = readFavorites();
@@ -47,7 +51,7 @@ export default function FavoriteButton({ listingId }: Props) {
                 weight={isFavorited ? "fill" : "regular"}
                 className={isFavorited ? "text-red-400" : "text-white"}
             />
-            {isFavorited ? "Saved" : "Save"}
+            {isFavorited ? t.favorites.saved : t.favorites.save}
         </button>
     );
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import LanguageMenu from "./LanguageMenu";
 import { navButtonClass } from "../ui/buttonStyles";
 import SearchButton from "../ui/SearchButton";
-import { getTranslations, type Locale } from "@/lib/i18n";
+import { getTranslations, type Locale } from "@/lib/index";
 
 type Props = {
     locale: Locale;

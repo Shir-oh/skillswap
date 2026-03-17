@@ -2,13 +2,16 @@ import type { Listing } from "@/lib/listings";
 import Link from "next/link";
 import Image from "next/image";
 import Icon from "../ui/Icon";
+import { getTranslations, type Locale } from "@/lib";
 
 type Props = {
-    locale: string;
+    locale: Locale;
     listing: Listing;
 };
 
 export default function ListingRow({ locale, listing }: Props) {
+    const t = getTranslations(locale);
+
     return (
         <Link
             href={`/${locale}/listings/${listing.id}`}
@@ -28,14 +31,14 @@ export default function ListingRow({ locale, listing }: Props) {
                 <div className="grid gap-3 sm:grid-cols-2">
                     <div className="rounded-xl bg-white/5 p-3">
                         <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
-                            Offers
+                            {t.listings.offers}
                         </p>
                         <p className="mt-1 font-medium">{listing.offer}</p>
                     </div>
 
                     <div className="rounded-xl bg-white/5 p-3">
                         <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
-                            Wants
+                            {t.listings.wants}
                         </p>
                         <p className="mt-1 font-medium">{listing.want}</p>
                     </div>

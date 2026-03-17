@@ -6,14 +6,16 @@ import SearchListings from "./SearchListings";
 import { tertiaryButtonClass } from "@/components/ui/buttonStyles";
 import type { Listing } from "@/lib/listings";
 import Icon from "../ui/Icon";
+import { getTranslations, type Locale } from "@/lib";
 
 type Props = {
-    locale: string;
+    locale: Locale;
     listings: Listing[];
 };
 
 export default function ListingsView({ locale, listings }: Props) {
     const [searchQuery, setSearchQuery] = useState("");
+    const t = getTranslations(locale);
 
     const filteredListings = listings.filter((listing) => {
         const query = searchQuery.toLowerCase();
@@ -30,22 +32,21 @@ export default function ListingsView({ locale, listings }: Props) {
         <div className="space-y-8">
             <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tight">
-                    Find your next skill swap
+                    {t.listings.title}
                 </h1>
 
                 <p className="max-w-2xl text-gray-400">
-                    Browse developers offering skills they know and looking to learn
-                    something new through peer-to-peer exchanges.
+                    {t.listings.description}
                 </p>
             </div>
 
-            <SearchListings value={searchQuery} onChange={setSearchQuery}
+            <SearchListings value={searchQuery} onChange={setSearchQuery} locale={locale}
             />
 
             <div className="space-y-4">
                 {filteredListings.length === 0 ? (
                     <p className="text-sm text-gray-400">
-                        No listings match your search.
+                        {t.listings.emptyState}
                     </p>
                 ) : (
                     filteredListings.map((listing) => (
@@ -60,14 +61,14 @@ export default function ListingsView({ locale, listings }: Props) {
 
             <div className="space-y-3 rounded-2xl border border-white/10 p-6 text-center">
                 <p className="text-sm text-gray-400">
-                    Want to share a skill and learn something new?
+                    {t.listings.ctaText}
                 </p>
 
                 <button
                     type="button"
                     className={tertiaryButtonClass}
                 >
-                    Create listing
+                    {t.listings.ctaButton}
                     <Icon
                         icon="arrow-right"
                         size={18}

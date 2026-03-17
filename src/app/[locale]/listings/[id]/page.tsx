@@ -2,26 +2,28 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import FavoriteButton from "@/components/favorites/FavoriteButton";
 import Icon from "@/components/ui/Icon";
-import { listings } from "@/lib/listings";
+import { getListings } from "@/lib/listings";
+import { getTranslations, type Locale } from "@/lib";
+
 
 type Props = {
-    params: Promise<{ locale: string; id: string }>;
+    params: Promise<{ locale: Locale; id: string }>;
 };
 
 export default async function ListingsDetailPage({ params }: Props) {
-    const { id } = await params;
-
+    const { locale, id } = await params;
+    const listings = getListings(locale);
     const listing = listings.find((listing) => listing.id === id);
 
     if (!listing) notFound();
+
+    const t = getTranslations(locale);
 
     return (
         <div className="mx-auto max-w-5xl">
             <div className="grid gap-8 lg:grid-cols-2">
                 <div className="space-y-6">
                     <div className="space-y-2">
-                        <p className="text-sm text-gray-400">{listing.name}</p>
-
 
                         <h1 className="text-3xl font-bold tracking-tight">
                             {listing.name}
@@ -33,21 +35,21 @@ export default async function ListingsDetailPage({ params }: Props) {
                     <div className="grid gap-4 sm:grid-cols-2">
                         <div className="rounded-2xl border border-white/10 p-4">
                             <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
-                                Offers
+                                {t.listingDetail.offers}
                             </p>
                             <p className="mt-2 font-medium">{listing.offer}</p>
                         </div>
 
                         <div className="rounded-2xl border border-white/10 p-4">
                             <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
-                                Wants
+                                {t.listingDetail.wants}
                             </p>
                             <p className="mt-2 font-medium">{listing.want}</p>
                         </div>
                     </div>
 
                     <div className="flex flex-wrap gap-4 text-sm text-gray-300">
-                        <span>Level: {listing.level}</span>
+                        <span>{t.listingDetail.level}: {listing.level}</span>
 
                         <span className="inline-flex items-center gap-1">
                             <Icon
@@ -60,7 +62,7 @@ export default async function ListingsDetailPage({ params }: Props) {
                         </span>
                     </div>
 
-                    <FavoriteButton listingId={listing.id} />
+                    <FavoriteButton listingId={listing.id} locale={locale} />
                 </div>
 
                 <div className="rounded-2xl border border-white/10 p-4">

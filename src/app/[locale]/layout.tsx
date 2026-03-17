@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import type { Locale } from "@/lib";
 
 type Props = {
     children: React.ReactNode;
-    params: Promise<{ locale: string }>
+    params: Promise<{ locale: Locale }>
 }
 
 export default async function LocaleLayout({ children, params }: Props) {
@@ -13,12 +14,11 @@ export default async function LocaleLayout({ children, params }: Props) {
     if (locale !== "en" && locale !== "no") {
         notFound();
     }
-
     return (
-        <div className="min-h-screen bg-gray-950 text-white">
-            < Header locale={locale} />
+        <>
+            <Header locale={locale} />
             <main className="p-8">{children}</main>
-            <Footer />
-        </div >
-    )
+            <Footer locale={locale} />
+        </>
+    );
 }

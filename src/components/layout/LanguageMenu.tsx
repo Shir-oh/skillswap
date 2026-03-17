@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { navButtonClass } from "../ui/buttonStyles";
-import { getTranslations, type Locale } from "@/lib/i18n";
+import { getTranslations, type Locale } from "@/lib/index";
 
 type Props = {
     locale: Locale;

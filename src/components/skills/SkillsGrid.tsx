@@ -1,8 +1,9 @@
 import type { Skill } from "@/lib/skills";
 import SkillCard from "./SkillsCard";
+import { Locale } from "@/lib";
 
 type Props = {
-    locale: string;
+    locale: Locale;
     skills: Skill[];
 };
 

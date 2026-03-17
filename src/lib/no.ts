@@ -15,9 +15,40 @@ const no: Messages = {
         titleLine1: "Bytt utviklerferdigheter.",
         titleLine2: "Lær fra andre utviklere.",
         description:
-            "SkillSwap er en liten markedsplass hvor utviklere tilbyr programmeringsferdigheter de kan og ber om ferdigheter de ønsker å lære. Bla gjennom annonser, oppdag muligheter og kom i kontakt med andre for å utveksle kunnskap.",
+            "SkillSwap er en liten markedsplass hvor utviklere tilbyr programmeringsferdigheter de kan og ber om ferdigheter de ønsker å lære.",
         featuredSkills: "Utvalgte ferdigheter",
     },
+    listings: {
+        title: "Finn ditt neste ferdighetsbytte",
+        description:
+            "Se utviklere som tilbyr ferdigheter de kan, og som ønsker å lære noe nytt gjennom kunnskapsutveksling mellom utviklere.",
+        searchPlaceholder: "Søk etter ferdigheter eller teknologi...",
+        emptyState: "Ingen annonser matcher søket ditt.",
+        ctaText: "Vil du dele en ferdighet og lære noe nytt?",
+        ctaButton: "Opprett annonse",
+        offers: "Tilbyr",
+        wants: "Ønsker",
+    },
+    listingDetail: {
+        offers: "Tilbyr",
+        wants: "Ønsker",
+        level: "Nivå",
+    },
+    favorites: {
+        title: "Favoritter",
+        description: "Annonser du har lagret for å se senere.",
+        emptyState: "Du har ikke lagret noen annonser ennå.",
+        save: "Lagre",
+        saved: "Lagret",
+    },
+    footer: {
+        copyright: "© 2026 Porteføljeprosjekt | SkillSwap av Shir-oh",
+    },
+    notFound: {
+        title: "Siden ble ikke funnet",
+        description: "Siden du leter etter finnes ikke eller kan ha blitt flyttet.",
+        backHome: "Tilbake til forsiden",
+    }
 };
 
 export default no;

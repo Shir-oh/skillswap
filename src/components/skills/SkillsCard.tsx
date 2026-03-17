@@ -4,9 +4,10 @@ import type { Skill } from "@/lib/skills";
 import Link from "next/link";
 import Image from "next/image";
 import Icon from "../ui/Icon";
+import { Locale } from "@/lib";
 
 type Props = {
-    locale: string;
+    locale: Locale;
     skill: Skill;
 };
 
