@@ -12,6 +12,11 @@ type Props = {
   locale: Locale;
 };
 
+const searchRoutes = {
+  favorites: ["favorites", "favoritter"],
+  home: ["home", "hjem", "start"],
+};
+
 export default function Header({ locale }: Props) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,14 +26,24 @@ export default function Header({ locale }: Props) {
   function handleSearchSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
 
-    const query = searchQuery.trim();
+    const query = searchQuery.trim().toLowerCase();
 
     if (!query) {
-      router.push(`/${locale}/listings`);
+      setIsSearchOpen(false);
+      setSearchQuery("");
       return;
     }
 
-    router.push(`/${locale}/listings?search=${encodeURIComponent(query)}`);
+    if (searchRoutes.favorites.includes(query)) {
+      router.push(`/${locale}/favorites`);
+    } else if (searchRoutes.home.includes(query)) {
+      router.push(`/${locale}`);
+    } else {
+      router.push(`/${locale}/listings?search=${encodeURIComponent(query)}`);
+    }
+
+    setIsSearchOpen(false);
+    setSearchQuery("");
   }
 
   function handleSearchToggle() {
