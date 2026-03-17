@@ -1,5 +1,5 @@
 import SkillsGrid from "@/components/skills/SkillsGrid";
-import { getTranslations, type Locale } from "@/lib/i18n";
+import { getTranslations, type Locale } from "@/lib/index";
 import { skills } from "@/lib/skills";
 
 type Props = {
