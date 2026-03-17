@@ -4,10 +4,16 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { navButtonClass } from "../ui/buttonStyles";
+import { getTranslations, type Locale } from "@/lib/i18n";
 
-export default function LanguageMenu() {
+type Props = {
+    locale: Locale;
+};
+
+export default function LanguageMenu({ locale }: Props) {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
+    const t = getTranslations(locale);
 
     function switchLocale(locale: "en" | "no") {
         const segments = pathname.split("/").filter(Boolean);
@@ -24,7 +30,7 @@ export default function LanguageMenu() {
                 onClick={() => setIsOpen((prev) => !prev)}
                 className={navButtonClass}
             >
-                Language
+                {t.nav.language}
             </button>
 
             {isOpen && (

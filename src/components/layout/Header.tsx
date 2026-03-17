@@ -2,12 +2,15 @@ import Link from "next/link";
 import LanguageMenu from "./LanguageMenu";
 import { navButtonClass } from "../ui/buttonStyles";
 import SearchButton from "../ui/SearchButton";
+import { getTranslations, type Locale } from "@/lib/i18n";
 
 type Props = {
-    locale: string;
+    locale: Locale;
 };
 
 export default function Header({ locale }: Props) {
+    const t = getTranslations(locale);
+
     return (
         <header className="border-b border-gray-800 bg-gray-950 text-white">
             <div className="mx-auto flex items-center justify-between px-6 py-4">
@@ -18,16 +21,17 @@ export default function Header({ locale }: Props) {
 
                 <nav className="flex items-center gap-4">
                     <Link href={`/${locale}/listings`} className={navButtonClass}>
-                        Listings
+                        {t.nav.listings}
                     </Link>
 
                     <Link href={`/${locale}/favorites`} className={navButtonClass}>
-                        Favorites
+                        {t.nav.favorites}
                     </Link>
 
                     <div className="h-6 w-px bg-gray-700" />
-                    <SearchButton />
-                    <LanguageMenu />
+
+                    <SearchButton locale={locale} />
+                    <LanguageMenu locale={locale} />
                 </nav>
             </div >
         </header >
