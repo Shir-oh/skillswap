@@ -3,12 +3,21 @@ import { type Locale } from "@/lib";
 import { getListings } from "@/lib/listings";
 
 type Props = {
-    params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: Locale }>;
+  searchParams: Promise<{ search?: string }>;
 };
 
-export default async function ListingsPage({ params }: Props) {
-    const { locale } = await params;
-    const listings = getListings(locale);
+export default async function ListingsPage({ params, searchParams }: Props) {
+  const { locale } = await params;
+  const { search } = await searchParams;
 
-    return <ListingsView locale={locale} listings={listings} />;
+  const listings = getListings(locale);
+
+  return (
+    <ListingsView
+      locale={locale}
+      listings={listings}
+      initialSearchQuery={search ?? ""}
+    />
+  );
 }

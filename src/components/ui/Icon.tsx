@@ -1,54 +1,51 @@
 "use client";
 
 import {
-    ArrowRightIcon,
-    ArrowLeftIcon,
-    CaretRightIcon,
-    CaretLeftIcon,
-    HeartIcon,
-    StarIcon,
-    MagnifyingGlassIcon,
+  ArrowRightIcon,
+  ArrowLeftIcon,
+  CaretRightIcon,
+  CaretLeftIcon,
+  HeartIcon,
+  StarIcon,
+  MagnifyingGlassIcon,
+  XIcon,
 } from "@phosphor-icons/react";
 
 export type IconName =
-    | "arrow-right"
-    | "arrow-left"
-    | "heart"
-    | "star"
-    | "search"
-    | "caret-right"
-    | "caret-left";
+  | "arrow-right"
+  | "arrow-left"
+  | "heart"
+  | "star"
+  | "search"
+  | "caret-right"
+  | "caret-left"
+  | "x";
 
 type Props = {
-    icon: IconName;
-    size?: number;
-    className?: string;
-    weight?: "regular" | "fill";
+  icon: IconName;
+  size?: number;
+  className?: string;
+  weight?: "regular" | "fill";
 };
 
 const icons = {
-    "arrow-right": ArrowRightIcon,
-    "arrow-left": ArrowLeftIcon,
-    heart: HeartIcon,
-    star: StarIcon,
-    search: MagnifyingGlassIcon,
-    "caret-right": CaretRightIcon,
-    "caret-left": CaretLeftIcon,
+  "arrow-right": ArrowRightIcon,
+  "arrow-left": ArrowLeftIcon,
+  heart: HeartIcon,
+  star: StarIcon,
+  search: MagnifyingGlassIcon,
+  "caret-right": CaretRightIcon,
+  "caret-left": CaretLeftIcon,
+  x: XIcon,
 };
 
 export default function Icon({
-    icon,
-    size = 16,
-    className,
-    weight = "regular",
+  icon,
+  size = 16,
+  className,
+  weight = "regular",
 }: Props) {
-    const Component = icons[icon];
+  const Component = icons[icon];
 
-    return (
-        <Component
-            size={size}
-            weight={weight}
-            className={className}
-        />
-    );
+  return <Component size={size} weight={weight} className={className} />;
 }

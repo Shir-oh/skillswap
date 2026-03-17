@@ -4,20 +4,26 @@ const en = {
         favorites: "Favorites",
         language: "Language",
     },
+
     search: {
         ariaLabel: "Search",
+        headerPlaceholder: "Search",
     },
+
     home: {
         titleLine1: "Exchange developer skills.",
         titleLine2: "Learn from other developers.",
-        description: "SkillSwap is a small marketplace where developers offer programming skills they know and request skills they want to learn. Browse listings, discover opportunities, and connect with others to exchange knowledge.",
+        description:
+            "SkillSwap is a small marketplace where developers offer programming skills they know and request skills they want to learn. Browse listings, discover opportunities, and connect with others to exchange knowledge.",
         featuredSkills: "Featured skills",
     },
+
     listings: {
         title: "Find your next skill swap",
         description:
             "Browse developers offering skills they know and looking to learn something new through peer-to-peer exchanges.",
-        searchPlaceholder: "Search skills or technologies...",
+        filterPlaceholder: "Filter skills or technologies...",
+        clearFilterLabel: "Clear filter",
         emptyState: "No listings match your search.",
         ctaText: "Want to share a skill and learn something new?",
         ctaButton: "Create listing",

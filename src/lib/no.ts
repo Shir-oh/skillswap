@@ -8,9 +8,12 @@ const no: Messages = {
         favorites: "Favoritter",
         language: "Språk",
     },
+
     search: {
         ariaLabel: "Søk",
+        headerPlaceholder: "Søk",
     },
+
     home: {
         titleLine1: "Bytt utviklerferdigheter.",
         titleLine2: "Lær fra andre utviklere.",
@@ -18,11 +21,13 @@ const no: Messages = {
             "SkillSwap er en liten markedsplass hvor utviklere tilbyr programmeringsferdigheter de kan og ber om ferdigheter de ønsker å lære.",
         featuredSkills: "Utvalgte ferdigheter",
     },
+
     listings: {
         title: "Finn ditt neste ferdighetsbytte",
         description:
             "Se utviklere som tilbyr ferdigheter de kan, og som ønsker å lære noe nytt gjennom kunnskapsutveksling mellom utviklere.",
-        searchPlaceholder: "Søk etter ferdigheter eller teknologi...",
+        filterPlaceholder: "Filtrer ferdigheter eller teknologi...",
+        clearFilterLabel: "Fjern filter",
         emptyState: "Ingen annonser matcher søket ditt.",
         ctaText: "Vil du dele en ferdighet og lære noe nytt?",
         ctaButton: "Opprett annonse",
