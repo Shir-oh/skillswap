@@ -5,7 +5,7 @@ import ListingRow from "./ListingRow";
 import SearchListings from "./SearchListings";
 import { tertiaryButtonClass } from "@/components/ui/buttonStyles";
 import type { Listing } from "@/lib/listings";
-import Icon from "../ui/Icon";
+import Icon from "../../assets/Icon";
 import { getTranslations, type Locale } from "@/lib";
 import Link from "next/link";
 
@@ -65,7 +65,8 @@ export default function ListingsView({
 
         <Link
           href={`/${locale}/listings/create`}
-          className={tertiaryButtonClass}>
+          className={tertiaryButtonClass}
+        >
           {t.listings.ctaButton}
           <Icon icon="arrow-right" size={18} weight="regular" />
         </Link>

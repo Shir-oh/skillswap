@@ -1,5 +1,5 @@
 import { getTranslations, type Locale } from "@/lib";
-import Icon from "../ui/Icon";
+import Icon from "../../assets/Icon";
 
 type Props = {
   value: string;

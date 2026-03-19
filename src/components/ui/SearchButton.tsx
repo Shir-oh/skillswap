@@ -1,6 +1,6 @@
 "use client";
 
-import Icon from "./Icon";
+import Icon from "../../assets/Icon";
 import { getTranslations, type Locale } from "@/lib";
 
 type Props = {

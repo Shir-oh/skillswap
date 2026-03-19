@@ -22,7 +22,7 @@ export type IconName =
   | "caret-right"
   | "caret-left"
   | "caret-down"
-  | "paper-plane"
+  | "paper-plane-tilt"
   | "x";
 
 type Props = {
@@ -41,7 +41,7 @@ const icons = {
   "caret-right": CaretRightIcon,
   "caret-left": CaretLeftIcon,
   "caret-down": CaretDownIcon,
-  "paper-plane": PaperPlaneTiltIcon,
+  "paper-plane-tilt": PaperPlaneTiltIcon,
   x: XIcon,
 };
 
@@ -53,5 +53,12 @@ export default function Icon({
 }: Props) {
   const Component = icons[icon];
 
-  return <Component size={size} weight={weight} className={className} />;
+  return (
+    <Component
+      size={size}
+      weight={weight}
+      className={className}
+      aria-hidden="true"
+    />
+  );
 }

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { getTranslations, type Locale } from "@/lib";
 import Image from "next/image";
-import Icon from "@/components/ui/Icon";
+import Icon from "@/assets/Icon";
 import { tertiaryButtonClass } from "@/components/ui/buttonStyles";
 
 export default function NotFound() {
@@ -26,7 +26,7 @@ export default function NotFound() {
       />
 
       <Link href={`/${locale}`} className={tertiaryButtonClass}>
-        <Icon icon="arrow-left" size={14} weight="regular" />
+        <Icon icon="arrow-left" size={16} weight="regular" />
         {t.notFound.backHome}
       </Link>
     </div>

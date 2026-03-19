@@ -7,6 +7,7 @@ import LanguageMenu from "./LanguageMenu";
 import SearchButton from "../ui/SearchButton";
 import { navButtonClass } from "../ui/buttonStyles";
 import { getTranslations, type Locale } from "@/lib";
+import Logo from "@/components/ui/Logo";
 
 type Props = {
   locale: Locale;
@@ -59,8 +60,14 @@ export default function Header({ locale }: Props) {
   return (
     <header className="border-b border-gray-800 bg-gray-950 text-white">
       <div className="mx-auto flex items-center justify-between px-6 py-4">
-        <Link href={`/${locale}`} className="text-2xl font-bold">
-          Skill<span className="text-brand">Swap</span>
+        <Link
+          href={`/${locale}`}
+          className="inline-flex items-center gap-2 whitespace-nowrap"
+        >
+          <Logo className="h-8 w-8 shrink-0 text-brand" />
+          <span className="text-2xl font-bold leading-none">
+            Skill<span className="text-brand">Swap</span>
+          </span>
         </Link>
 
         <nav className="flex items-center gap-4">
