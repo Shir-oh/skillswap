@@ -49,13 +49,13 @@ export default function ListingRow({ locale, listing }: Props) {
         <div className="flex items-center justify-between text-xs text-gray-500">
           <span>{listing.level}</span>
           <span className="inline-flex items-center gap-1">
-            <Icon icon="star" size={14} weight="fill" className="text-brand" />
+            <Icon icon="star" size={16} weight="fill" className="text-brand" />
             {listing.rating}
           </span>
         </div>
       </div>
 
-      <Icon icon="caret-right" size={18} className="shrink-0 text-gray-500" />
+      <Icon icon="caret-right" size={16} className="shrink-0 text-gray-500" />
     </Link>
   );
 }

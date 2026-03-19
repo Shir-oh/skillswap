@@ -47,7 +47,7 @@ export default function FavoriteButton({ listingId, locale }: Props) {
     >
       <Icon
         icon="heart"
-        size={18}
+        size={16}
         weight={isFavorited ? "fill" : "regular"}
         className={isFavorited ? "text-red-400" : "text-white"}
       />

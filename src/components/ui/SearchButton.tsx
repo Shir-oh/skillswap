@@ -21,7 +21,7 @@ export default function SearchButton({ locale, onClick, isOpen }: Props) {
         isOpen ? "border-l border-white/10" : ""
       }`}
     >
-      <Icon icon="search" size={18} weight="regular" />
+      <Icon icon="search" size={16} weight="regular" />
     </button>
   );
 }

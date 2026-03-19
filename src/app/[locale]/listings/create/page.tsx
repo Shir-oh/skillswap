@@ -97,7 +97,7 @@ export default async function CreateListingPage({ params }: Props) {
               </option>
             </select>
             <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
-              <Icon icon="caret-down" size={18} />
+              <Icon icon="caret-down" size={16} />
             </span>
           </div>
         </div>
@@ -105,7 +105,7 @@ export default async function CreateListingPage({ params }: Props) {
         <div className="flex justify-center">
           <button type="submit" className={tertiaryButtonClass}>
             {t.createListing.submit}
-            <Icon icon="paper-plane" size={18} />
+            <Icon icon="paper-plane-tilt" size={16} />
           </button>
         </div>
       </form>

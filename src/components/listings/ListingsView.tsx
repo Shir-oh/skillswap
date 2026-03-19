@@ -68,7 +68,7 @@ export default function ListingsView({
           className={tertiaryButtonClass}
         >
           {t.listings.ctaButton}
-          <Icon icon="arrow-right" size={18} weight="regular" />
+          <Icon icon="arrow-right" size={16} weight="regular" />
         </Link>
       </div>
     </div>
