@@ -7,6 +7,7 @@ import { tertiaryButtonClass } from "@/components/ui/buttonStyles";
 import type { Listing } from "@/lib/listings";
 import Icon from "../ui/Icon";
 import { getTranslations, type Locale } from "@/lib";
+import Link from "next/link";
 
 type Props = {
   locale: Locale;
@@ -62,10 +63,12 @@ export default function ListingsView({
       <div className="space-y-3 rounded-2xl border border-white/10 p-6 text-center">
         <p className="text-sm text-gray-400">{t.listings.ctaText}</p>
 
-        <button type="button" className={tertiaryButtonClass}>
+        <Link
+          href={`/${locale}/listings/create`}
+          className={tertiaryButtonClass}>
           {t.listings.ctaButton}
           <Icon icon="arrow-right" size={18} weight="regular" />
-        </button>
+        </Link>
       </div>
     </div>
   );

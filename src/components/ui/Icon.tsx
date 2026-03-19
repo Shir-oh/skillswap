@@ -5,9 +5,11 @@ import {
   ArrowLeftIcon,
   CaretRightIcon,
   CaretLeftIcon,
+  CaretDownIcon,
   HeartIcon,
   StarIcon,
   MagnifyingGlassIcon,
+  PaperPlaneTiltIcon,
   XIcon,
 } from "@phosphor-icons/react";
 
@@ -19,6 +21,8 @@ export type IconName =
   | "search"
   | "caret-right"
   | "caret-left"
+  | "caret-down"
+  | "paper-plane"
   | "x";
 
 type Props = {
@@ -36,6 +40,8 @@ const icons = {
   search: MagnifyingGlassIcon,
   "caret-right": CaretRightIcon,
   "caret-left": CaretLeftIcon,
+  "caret-down": CaretDownIcon,
+  "paper-plane": PaperPlaneTiltIcon,
   x: XIcon,
 };
 

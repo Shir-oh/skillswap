@@ -21,7 +21,6 @@ const no: Messages = {
             "SkillSwap er en liten markedsplass hvor utviklere tilbyr programmeringsferdigheter de kan og ber om ferdigheter de ønsker å lære.",
         featuredSkills: "Utvalgte ferdigheter",
     },
-
     listings: {
         title: "Finn ditt neste ferdighetsbytte",
         description:
@@ -45,6 +44,28 @@ const no: Messages = {
         emptyState: "Du har ikke lagret noen annonser ennå.",
         save: "Lagre",
         saved: "Lagret",
+    },
+    createListing: {
+        title: "Opprett en ny annonse",
+        description: "Del hva du kan og hva du ønsker å lære.",
+        name: "Navn",
+        offer: "Tilbyr",
+        want: "Ønsker",
+        descriptionField: "Beskrivelse",
+        placeholders: {
+            name: "f.eks. Maya",
+            offer: "f.eks. React grunnleggende",
+            want: "f.eks. TypeScript",
+            description: "f.eks. Lær komponenter, props og state",
+        },
+        level: "Nivå",
+        levelPlaceholder: "Velg nivå",
+        levels: {
+            beginner: "Nybegynner",
+            intermediate: "Middels",
+            advanced: "Avansert",
+        },
+        submit: "Publiser annonse",
     },
     footer: {
         copyright: "© 2026 Porteføljeprosjekt | SkillSwap av Shir-oh",

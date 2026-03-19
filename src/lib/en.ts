@@ -42,6 +42,28 @@ const en = {
         save: "Save",
         saved: "Saved",
     },
+    createListing: {
+        title: "Create a new skill swap",
+        description: "Share what you know and what you want to learn.",
+        name: "Name",
+        offer: "Offer",
+        want: "Want",
+        descriptionField: "Description",
+        placeholders: {
+            name: "e.g. Maya",
+            offer: "e.g. React basics",
+            want: "e.g. TypeScript",
+            description: "e.g. Learn components, props, and state",
+        },
+        level: "Level",
+        levelPlaceholder: "Select level",
+        levels: {
+            beginner: "Beginner",
+            intermediate: "Intermediate",
+            advanced: "Advanced",
+        },
+        submit: "Publish listing",
+    },
     footer: {
         copyright: "© 2026 Portfolio project | SkillSwap by Shir-oh",
     },
