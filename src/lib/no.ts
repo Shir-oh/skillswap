@@ -66,6 +66,11 @@ const no: Messages = {
             advanced: "Avansert",
         },
         submit: "Publiser annonse",
+        feedback: {
+            missingFields: "Vennligst fyll ut alle feltene.",
+            success: "Annonsen ble publisert.",
+            requiredField: "Dette feltet er påkrevd.",
+        }
     },
     footer: {
         copyright: "© 2026 Porteføljeprosjekt | SkillSwap av Shir-oh",

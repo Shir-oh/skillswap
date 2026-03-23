@@ -11,6 +11,8 @@ import {
   MagnifyingGlassIcon,
   PaperPlaneTiltIcon,
   XIcon,
+  CheckCircleIcon,
+  WarningCircleIcon,
 } from "@phosphor-icons/react";
 
 export type IconName =
@@ -23,7 +25,9 @@ export type IconName =
   | "caret-left"
   | "caret-down"
   | "paper-plane-tilt"
-  | "x";
+  | "x"
+  | "check-circle"
+  | "warning-circle";
 
 type Props = {
   icon: IconName;
@@ -43,6 +47,8 @@ const icons = {
   "caret-down": CaretDownIcon,
   "paper-plane-tilt": PaperPlaneTiltIcon,
   x: XIcon,
+  "check-circle": CheckCircleIcon,
+  "warning-circle": WarningCircleIcon,
 };
 
 export default function Icon({

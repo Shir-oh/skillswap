@@ -63,6 +63,11 @@ const en = {
             advanced: "Advanced",
         },
         submit: "Publish listing",
+        feedback: {
+            missingFields: "Please fill in all fields.",
+            success: "Listing published successfully.",
+            requiredField: "This field is required.",
+        }
     },
     footer: {
         copyright: "© 2026 Portfolio project | SkillSwap by Shir-oh",

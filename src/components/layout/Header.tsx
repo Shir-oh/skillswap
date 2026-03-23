@@ -8,6 +8,7 @@ import SearchButton from "../ui/SearchButton";
 import { navButtonClass } from "../ui/buttonStyles";
 import { getTranslations, type Locale } from "@/lib";
 import Logo from "@/components/ui/Logo";
+import { FormEvent } from "react";
 
 type Props = {
   locale: Locale;
@@ -24,7 +25,7 @@ export default function Header({ locale }: Props) {
   const router = useRouter();
   const t = getTranslations(locale);
 
-  function handleSearchSubmit(event: React.SyntheticEvent) {
+  function handleSearchSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const query = searchQuery.trim().toLowerCase();
