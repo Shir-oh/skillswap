@@ -13,6 +13,8 @@ import {
   XIcon,
   CheckCircleIcon,
   WarningCircleIcon,
+  GithubLogoIcon,
+  ListIcon,
 } from "@phosphor-icons/react";
 
 export type IconName =
@@ -21,13 +23,15 @@ export type IconName =
   | "heart"
   | "star"
   | "search"
+  | "list"
   | "caret-right"
   | "caret-left"
   | "caret-down"
   | "paper-plane-tilt"
   | "x"
   | "check-circle"
-  | "warning-circle";
+  | "warning-circle"
+  | "github";
 
 type Props = {
   icon: IconName;
@@ -42,6 +46,7 @@ const icons = {
   heart: HeartIcon,
   star: StarIcon,
   search: MagnifyingGlassIcon,
+  list: ListIcon,
   "caret-right": CaretRightIcon,
   "caret-left": CaretLeftIcon,
   "caret-down": CaretDownIcon,
@@ -49,6 +54,7 @@ const icons = {
   x: XIcon,
   "check-circle": CheckCircleIcon,
   "warning-circle": WarningCircleIcon,
+  github: GithubLogoIcon,
 };
 
 export default function Icon({

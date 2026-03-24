@@ -6,7 +6,9 @@ const no: Messages = {
     nav: {
         listings: "Annonser",
         favorites: "Favoritter",
-        language: "Språk",
+        language: {
+            label: "Språk",
+        }
     },
 
     search: {
@@ -73,7 +75,7 @@ const no: Messages = {
         }
     },
     footer: {
-        copyright: "© 2026 Porteføljeprosjekt | SkillSwap av Shir-oh",
+        copyright: "© 2026 SkillSwap"
     },
     notFound: {
         title: "Siden ble ikke funnet",

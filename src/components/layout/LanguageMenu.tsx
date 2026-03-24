@@ -45,26 +45,34 @@ export default function LanguageMenu({ locale }: Props) {
         onClick={() => setIsOpen((prev) => !prev)}
         className={navButtonClass}
       >
-        {t.nav.language}
+        {t.nav.language.label}
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-2 w-24 rounded-lg bg-white/10 p-2 text-white shadow">
-          <div className="flex flex-col gap-2">
+        <div className="absolute right-0 top-full z-10 mt-2 w-36 rounded-2xl border border-white/10 bg-gray-950 p-2 text-white shadow-lg">
+          <div className="flex flex-col">
             <Link
               href={switchLocale("en")}
               onClick={() => setIsOpen(false)}
-              className="rounded px-3 py-1 text-sm font-semibold hover:bg-white/10"
+              className={`rounded-lg px-3 py-2 text-sm ${
+                locale === "en"
+                  ? "bg-brand font-medium text-black"
+                  : "text-white hover:bg-white/5"
+              }`}
             >
-              🇺🇸 EN
+              English
             </Link>
 
             <Link
               href={switchLocale("no")}
               onClick={() => setIsOpen(false)}
-              className="rounded px-3 py-1 text-sm font-semibold hover:bg-white/10"
+              className={`rounded-lg px-3 py-2 text-sm ${
+                locale === "no"
+                  ? "bg-brand font-medium text-black"
+                  : "text-white hover:bg-white/5"
+              }`}
             >
-              🇳🇴 NO
+              Norsk
             </Link>
           </div>
         </div>

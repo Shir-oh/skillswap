@@ -2,7 +2,9 @@ const en = {
     nav: {
         listings: "Listings",
         favorites: "Favorites",
-        language: "Language",
+        language: {
+            label: "Language"
+        }
     },
 
     search: {
@@ -70,7 +72,7 @@ const en = {
         }
     },
     footer: {
-        copyright: "© 2026 Portfolio project | SkillSwap by Shir-oh",
+        copyright: "© 2026 SkillSwap"
     },
     notFound: {
         title: "Page not found",
