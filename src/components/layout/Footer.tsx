@@ -10,16 +10,16 @@ export default function Footer({ locale }: Props) {
 
   return (
     <footer className="border-t border-gray-800 bg-gray-950">
-      <div className="mx-auto flex flex-col items-center justify-between gap-3 px-6 py-6 text-sm text-gray-400 sm:flex-row">
+      <div className="mx-auto flex flex-col items-center justify-center gap-2 px-4 py-8 text-sm text-gray-400 sm:px-6">
         <p>{t.footer.copyright}</p>
 
         <a
-          href="https://github.com/your-username/skillswap"
+          href="https://github.com/Shir-oh/skillswap"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 rounded-md hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
-          <Icon icon="github" size={16} />
+          <Icon icon="github" size={14} weight="fill" />
           GitHub
         </a>
       </div>

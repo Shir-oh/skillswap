@@ -37,11 +37,13 @@ export default function ListingsView({
   return (
     <div className="space-y-8">
       <div className="space-y-2">
-        <h1 className="text-3xl font-bold tracking-tight">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           {t.listings.title}
         </h1>
 
-        <p className="max-w-2xl text-gray-400">{t.listings.description}</p>
+        <p className="max-w-2xl text-gray-400 leading-relaxed">
+          {t.listings.description}
+        </p>
       </div>
 
       <SearchListings

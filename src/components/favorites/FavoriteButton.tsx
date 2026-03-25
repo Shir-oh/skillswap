@@ -10,9 +10,13 @@ type Props = {
   locale: Locale;
 };
 
-function readFavorites() {
-  const stored = localStorage.getItem("favorites");
-  return stored ? JSON.parse(stored) : [];
+function readFavorites(): string[] {
+  try {
+    const stored = localStorage.getItem("favorites");
+    return stored ? JSON.parse(stored) : [];
+  } catch {
+    return [];
+  }
 }
 
 export default function FavoriteButton({ listingId, locale }: Props) {
@@ -43,6 +47,7 @@ export default function FavoriteButton({ listingId, locale }: Props) {
     <button
       type="button"
       onClick={toggleFavorite}
+      aria-pressed={isFavorited}
       className={secondaryButtonClass}
     >
       <Icon

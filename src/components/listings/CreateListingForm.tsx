@@ -21,7 +21,7 @@ type Errors = {
 };
 
 type BaseFieldProps = {
-  id: Exclude<FieldName, "level">
+  id: Exclude<FieldName, "level">;
   label: string;
   placeholder: string;
   error?: boolean;
@@ -31,16 +31,10 @@ type BaseFieldProps = {
   onChange: () => void;
 };
 
-function FieldError({
-  show,
-  message,
-}: {
-  show?: boolean;
-  message: string;
-}) {
+function FieldError({ show, message }: { show?: boolean; message: string }) {
   if (!show) return null;
 
-  return <p className="text-sm text-red-300">{message}</p>
+  return <p className="text-sm text-red-300">{message}</p>;
 }
 
 function TextField({
@@ -55,7 +49,8 @@ function TextField({
 }: BaseFieldProps) {
   return (
     <div className="space-y-2">
-      <label htmlFor={id} className="text-sm fonnt font-medium">{label}
+      <label htmlFor={id} className="text-sm font-medium">
+        {label}
       </label>
       <input
         id={id}
@@ -130,7 +125,7 @@ export default function CreateListingForm({ locale }: Props) {
     setErrors((prev) => {
       if (!prev[field]) return prev;
       return { ...prev, [field]: false };
-    })
+    });
   }
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -264,11 +259,10 @@ export default function CreateListingForm({ locale }: Props) {
           </span>
         </div>
 
-        {errors.level ? (
-          <p className="text-sm text-red-300">
-            {t.createListing.feedback.requiredField}
-          </p>
-        ) : null}
+        <FieldError
+          show={errors.level}
+          message={t.createListing.feedback.requiredField}
+        />
       </div>
 
       <div className="flex justify-center">
@@ -277,6 +271,6 @@ export default function CreateListingForm({ locale }: Props) {
           <Icon icon="paper-plane-tilt" size={16} />
         </button>
       </div>
-    </form >
+    </form>
   );
 }
