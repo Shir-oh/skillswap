@@ -10,7 +10,7 @@ export default function Footer({ locale }: Props) {
 
   return (
     <footer className="border-t border-gray-800 bg-gray-950">
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-between gap-3 px-6 py-6 text-sm text-gray-400 sm:flex-row">
+      <div className="mx-auto flex flex-col items-center justify-between gap-3 px-6 py-6 text-sm text-gray-400 sm:flex-row">
         <p>{t.footer.copyright}</p>
 
         <a

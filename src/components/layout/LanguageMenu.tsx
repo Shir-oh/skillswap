@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import { switchLocalePath } from "@/lib/switchLocalePath";
 import { navButtonClass } from "../ui/buttonStyles";
 import { getTranslations, type Locale } from "@/lib";
 
@@ -15,12 +16,6 @@ export default function LanguageMenu({ locale }: Props) {
   const pathname = usePathname();
   const t = getTranslations(locale);
   const containerRef = useRef<HTMLDivElement>(null);
-
-  function switchLocale(locale: "en" | "no") {
-    const segments = pathname.split("/").filter(Boolean);
-    segments[0] = locale;
-    return `/${segments.join("/")}`;
-  }
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -52,7 +47,7 @@ export default function LanguageMenu({ locale }: Props) {
         <div className="absolute right-0 top-full z-10 mt-2 w-36 rounded-2xl border border-white/10 bg-gray-950 p-2 text-white shadow-lg">
           <div className="flex flex-col">
             <Link
-              href={switchLocale("en")}
+              href={switchLocalePath(pathname, "en")}
               onClick={() => setIsOpen(false)}
               className={`rounded-lg px-3 py-2 text-sm ${
                 locale === "en"
@@ -64,7 +59,7 @@ export default function LanguageMenu({ locale }: Props) {
             </Link>
 
             <Link
-              href={switchLocale("no")}
+              href={switchLocalePath(pathname, "no")}
               onClick={() => setIsOpen(false)}
               className={`rounded-lg px-3 py-2 text-sm ${
                 locale === "no"

@@ -55,7 +55,7 @@ export default async function ListingsDetailPage({ params }: Props) {
               <Icon
                 weight="fill"
                 icon="star"
-                size={16}
+                size={14}
                 className="text-brand"
               />
               {listing.rating}

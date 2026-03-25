@@ -22,7 +22,7 @@ export default function SkillsCard({ locale, skill }: Props) {
         alt={skill.title}
         width={400}
         height={240}
-        className="h-48 w-full rounded-xl object-cover"
+        className="w-full rounded-xl object-cover"
       />
 
       <div className="mt-4 space-y-2">
@@ -33,7 +33,7 @@ export default function SkillsCard({ locale, skill }: Props) {
         <div className="flex items-center justify-between text-xs text-gray-500">
           <span>{skill.level}</span>
           <span className="inline-flex items-center gap-1">
-            <Icon icon="star" size={16} weight="fill" className="text-brand" />
+            <Icon icon="star" size={14} weight="fill" className="text-brand" />
             {skill.rating}
           </span>
         </div>
