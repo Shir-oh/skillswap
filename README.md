@@ -22,13 +22,15 @@ This project highlights clean front-end architecture, predictable UI behavior, a
 
 ---
 
-## Architecture notes
+## Architecture
 
 - Organized by reusable UI and route-based structure
 - Kept state local where global state was unnecessary
 - Prioritized straightforward components over early abstraction
 - Used local/mock state only where it supported meaningful user interactions
 - Structured to scale into a full-stack app without major refactoring
+
+---
 
 ## Features
 
