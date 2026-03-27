@@ -1,10 +1,8 @@
 # SkillSwap
 
-A small Next.js app for exchanging skills between users.
+A focused skill-exchange UI built with Next.js, TypeScript, and Tailwind CSS.
 
-The goal of this project is to practice building a clear, structured, and honest UI. Every visible action does something real, and nothing is over-engineered.
-
-It focuses on making deliberate trade-offs and building a consistent front-end system rather than a feature-heavy product.
+This project highlights clean front-end architecture, predictable UI behavior, and deliberate trade-offs in a small but realistic product interface.
 
 ---
 
@@ -23,6 +21,14 @@ It focuses on making deliberate trade-offs and building a consistent front-end s
 ![Create listing](public/images/create.png)
 
 ---
+
+## Architecture notes
+
+- Organized by reusable UI and route-based structure
+- Kept state local where global state was unnecessary
+- Prioritized straightforward components over early abstraction
+- Used local/mock state only where it supported meaningful user interactions
+- Structured to scale into a full-stack app without major refactoring
 
 ## Features
 
