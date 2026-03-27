@@ -1,10 +1,14 @@
 # SkillSwap
 
-A focused skill-exchange UI built with Next.js, TypeScript, and Tailwind CSS.
+A focused skill exchange UI built with Next.js, TypeScript, and Tailwind CSS.
 
 This project highlights clean front-end architecture, predictable UI behavior, and deliberate trade-offs in a small but realistic product interface.
 
 ---
+
+## Live Demo
+
+https://skillswap-shir.vercel.app
 
 ## Preview
 
