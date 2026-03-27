@@ -1,12 +1,18 @@
+import { notFound } from "next/navigation";
 import FavoritesList from "@/components/favorites/FavoritesList";
-import { getTranslations, type Locale } from "@/lib";
+import { getTranslations } from "@/lib";
 
 type Props = {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 };
 
 export default async function FavoritesPage({ params }: Props) {
   const { locale } = await params;
+
+  if (locale !== "en" && locale !== "no") {
+    notFound();
+  }
+
   const t = getTranslations(locale);
 
   return (

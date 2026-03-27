@@ -1,12 +1,18 @@
-import { getTranslations, Locale } from "@/lib";
+import { notFound } from "next/navigation";
+import { getTranslations } from "@/lib";
 import CreateListingForm from "@/components/listings/CreateListingForm";
 
 type Props = {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 };
 
 export default async function CreateListingPage({ params }: Props) {
   const { locale } = await params;
+
+  if (locale !== "en" && locale !== "no") {
+    notFound();
+  }
+
   const t = getTranslations(locale);
 
   return (

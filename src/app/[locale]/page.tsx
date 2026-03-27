@@ -1,13 +1,19 @@
+import { notFound } from "next/navigation";
 import SkillsGrid from "@/components/skills/SkillsGrid";
-import { getTranslations, type Locale } from "@/lib";
+import { getTranslations } from "@/lib";
 import { getSkills } from "@/lib/skills";
 
 type Props = {
-  params: Promise<{ locale: Locale }>;
+  params: Promise<{ locale: string }>;
 };
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params;
+
+  if (locale !== "en" && locale !== "no") {
+    notFound();
+  }
+
   const skills = getSkills(locale);
   const t = getTranslations(locale);
 

@@ -3,14 +3,19 @@ import Image from "next/image";
 import FavoriteButton from "@/components/favorites/FavoriteButton";
 import Icon from "@/assets/Icon";
 import { getListings } from "@/lib/listings";
-import { getTranslations, type Locale } from "@/lib";
+import { getTranslations } from "@/lib";
 
 type Props = {
-  params: Promise<{ locale: Locale; id: string }>;
+  params: Promise<{ locale: string; id: string }>;
 };
 
 export default async function ListingsDetailPage({ params }: Props) {
   const { locale, id } = await params;
+
+  if (locale !== "en" && locale !== "no") {
+    notFound();
+  }
+
   const listings = getListings(locale);
   const listing = listings.find((listing) => listing.id === id);
 
